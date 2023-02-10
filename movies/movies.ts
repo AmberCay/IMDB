@@ -1,13 +1,15 @@
+import { Professional } from "../profesional/profesional";
+
 export class Movies {
 
     //set up propiedades
     
     public title:string;
     public releaseYear:number;
-    // public actors:Professional[];
+    public actors:Professional[];
     public nacionality:string;
-    // public director:Professional;
-    // public writer:Professional;
+    public director:Professional;
+    public writer:Professional;
     language:string;
     plataforma:string;
     isMCU:boolean;
@@ -28,10 +30,27 @@ export class Movies {
         this.genre = genre;
     }
 
-    public printMovies():void {
-        for (const key in this) {
-            console.log(`${key}: ${this[key]}`);
-            // No se como funciones con los array's de Professional
+    public getActors():string {
+        let actores:string[] = [];
+        for (const actor of this.actors) {
+            actores.push(actor.name)
         }
+        return actores.join(' ')
+    }
+
+    public printMovies():string {
+        return `Titulo: ${this.title}\n
+                Anyo de estreno: ${this.releaseYear}\n
+                actores: ${this.getActors()}\n
+                Nacionalidad: ${this.nacionality}\n
+                Director: ${this.director}\n
+                Escritor: ${this.writer}\n
+                Lengua: ${this.language}\n
+                Plataforma ${this.plataforma}\n
+                Esta en el Universo Cinematico de Marvel?: ${this.isMCU}\n
+                Quien es el protagonista?: ${this.mainCharacterName}\n
+                Productor: ${this.producer}\n
+                Distribuidor: ${this.distributor}\n
+                Genero: ${this.genre}\n`
     }
 }
