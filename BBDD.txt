@@ -1,0 +1,1 @@
+{"peliculas":[{"title":"El Senyor de los Anillos","releaseYear":1993,"nacionality":"EEUU","genre":"Fantasia"},{"title":"los AristoGatos","releaseYear":1992,"nacionality":"EEUU","genre":"Animacion"}]}
