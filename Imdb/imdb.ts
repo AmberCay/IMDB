@@ -1,6 +1,6 @@
 import { Movies } from "../movies/movies";
 
-class Imdb {
+export class Imdb {
 
     // set up propiedades
 
