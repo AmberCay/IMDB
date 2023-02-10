@@ -10,9 +10,15 @@ let AG = new Movies('los AristoGatos', 1992, 'EEUU', 'Animacion');
 let listaPelis = new Imdb([ESA, AG]);
 fs.writeFileSync('imdbBBDD.json',JSON.stringify(listaPelis));
 
-let text = fs.readFileSync("./BBDD.json")
+let text:string = fs.readFileSync("./BBDD.json")
 let myJsonObject = JSON.parse(text)
-let peliculas2 = new Imdb(myJsonObject)
+
+let movieList:Movies[] = []
+for (let i = 0; i < myJsonObject.length; i++) {
+    movieList.push(myJsonObject.peliculas[i])
+}
+
+let peliculas2 = new Imdb(movieList)
 console.log(listaPelis);
-console.log(myJsonObject);
+console.log(peliculas2);
 
