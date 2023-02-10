@@ -17,7 +17,5 @@
   },
   "homepage": "https://github.com/AmberCay/IMDB#readme",
   "dependencies": {
-    "file-system": "^2.2.2",
-    "fs": "^0.0.1-security"
   }
 }
