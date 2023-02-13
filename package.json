@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/AmberCay/IMDB#readme",
   "dependencies": {
-    "@types/node": "^18.13.0"
+    "@types/node": "^7.0.5"
   }
 }
