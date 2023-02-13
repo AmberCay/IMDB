@@ -27,6 +27,7 @@ export class Imdb {
             movieList.push(myJsonObject.peliculas[i])
         };
 
-        let nuevoImdb:Imdb = new Imdb(movieList)
+        let nuevoImdb:Imdb = new Imdb(movieList);
+        return nuevoImdb;
     }
 }
