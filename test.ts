@@ -10,4 +10,5 @@ let peliculas = [ESA,AG];
 
 let collection = new Imdb(peliculas)
 
+collection.escribirEnFicheroJSON("bbddIMDB.json")
 collection.obtenerInstanciaIMDB("bbddIMDB.json")
