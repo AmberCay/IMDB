@@ -15,19 +15,16 @@ export class Imdb {
     // methods
 
     public escribirEnFicheroJSON(nombreFichero:string) {
-        fs.writeFileSync(`${nombreFichero}.json`, this.peliculas)
+        fs.writeFileSync(`${nombreFichero}.json`, JSON.stringify(this)
     }
 
     public obtenerInstanciaIMDB(nombreFichero:string):Imdb {
         let text:string = fs.readFileSync(`${nombreFichero}.json`);
+
         let myJsonObject = JSON.parse(text);
+        
+        let newIMDB = Object.assign(new Imdb(), myJsonObject)
 
-        let movieList:Movies[] = [];
-        for (let i = 0; i < myJsonObject.length; i++) {
-            movieList.push(myJsonObject.peliculas[i])
-        };
-
-        let nuevoImdb:Imdb = new Imdb(movieList);
-        return nuevoImdb;
+        return newIMDB
     }
 }
