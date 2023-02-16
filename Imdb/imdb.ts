@@ -1,4 +1,5 @@
 import { Movies } from "../movies/movies";
+let fs = require('fs')
 
 export class Imdb {
 
@@ -14,17 +15,24 @@ export class Imdb {
 
     // methods
 
+    private printMovies(Imdb) {
+        for (let i = 0; i < Imdb.peliculas.length; i++) {
+            console.log(Imdb.peliculas[i].printMovies());
+        }
+    }
     public escribirEnFicheroJSON(nombreFichero:string) {
-        fs.writeFileSync(`${nombreFichero}.json`, JSON.stringify(this)
+        let jsObj  = JSON.stringify(this);
+        fs.writeFileSync(nombreFichero, jsObj)
+        
     }
 
     public obtenerInstanciaIMDB(nombreFichero:string):Imdb {
-        let text:string = fs.readFileSync(`${nombreFichero}.json`);
 
-        let myJsonObject = JSON.parse(text);
+        let myJsonObject = JSON.parse(fs.readFileSync(nombreFichero));
+        console.log(myJsonObject);
         
-        let newIMDB = Object.assign(new Imdb(), myJsonObject)
-
+        let newIMDB = Object.assign(new Imdb(myJsonObject))
+        this.printMovies(newIMDB)
         return newIMDB
     }
 }

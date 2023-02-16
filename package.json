@@ -16,7 +16,10 @@
     "url": "https://github.com/AmberCay/IMDB/issues"
   },
   "homepage": "https://github.com/AmberCay/IMDB#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0"
+  },
   "dependencies": {
-    "@types/node": "^7.0.5"
+    "readline-sync": "^1.4.10"
   }
 }

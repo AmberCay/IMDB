@@ -10,13 +10,13 @@ export class Movies {
     public nacionality:string;
     public director:Professional;
     public writer:Professional;
-    language:string;
-    plataforma:string;
-    isMCU:boolean;
-    mainCharacterName:string;
-    producer:string;
-    distributor:string;
-    genre:string;
+    public language:string;
+    public plataforma:string;
+    public isMCU:boolean;
+    public mainCharacterName:string;
+    public producer:string;
+    public distributor:string;
+    public genre:string;
 
     // constructor
 
@@ -30,7 +30,7 @@ export class Movies {
         this.genre = genre;
     }
 
-    public getActors():string {
+    private getActors():string {
         let actores:string[] = [];
         for (const actor of this.actors) {
             actores.push(actor.name)
