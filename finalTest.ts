@@ -21,6 +21,9 @@ let movieNight = [ESA, AG];
 
 let movieSet = new Imdb(movieNight);
 
-movieSet.peliculas[0].actors.push(profesionalUsuario);
-console.log(movieSet.peliculas[0].printMovies());
+let actores = [profesionalUsuario]
+
+movieSet.peliculas[0].actors = actores;
+console.log(movieSet.peliculas[0]);
+
  
